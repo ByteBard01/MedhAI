@@ -1,0 +1,148 @@
+.sidebar {
+  min-height: 100vh;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #84a52a;
+  padding: 25px 15px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.25);
+  width: 75px;
+  overflow: hidden;
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sidebar.extended {
+  width: 260px;
+}
+
+.sidebar .menu {
+  display: block;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 35px;
+  color: white;
+}
+
+.sidebar .new-chat {
+  margin-top: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: linear-gradient(145deg, #9ac133, #84a52a);
+  border-radius: 50px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sidebar:not(.extended) .new-chat {
+  justify-content: center;
+  padding: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 48px;
+  gap: 0;
+}
+
+.sidebar:not(.extended) .new-chat p {
+  display: none;
+}
+
+.sidebar .new-chat:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar .new-chat-icon {
+  font-size: 24px;
+}
+
+.sidebar .recent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0.2s ease, visibility 0.3s 0.2s ease;
+}
+
+.sidebar.extended .recent {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar .recent-title {
+  margin-bottom: 20px;
+  margin-left: 8px;
+  color: white;
+  font-weight: 500;
+}
+
+.sidebar .recent-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 50px;
+  color: rgb(230, 230, 230);
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .recent-entry:hover,
+.sidebar .recent-entry.active {
+  background-color: #ffffff1e;
+}
+
+.chat-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.chat-info p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sidebar .recent-entry .recent-history-icon,
+.sidebar .recent-entry .delete-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.sidebar .delete-icon {
+  color: #e6e6e6;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar .recent-entry:hover .delete-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar .delete-icon:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.sidebar p {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.extended p {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
