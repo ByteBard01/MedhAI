@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Sidebar.css";
 import { Context } from "../../context/Context";
-import { IoIosMenu } from "react-icons/io5";
+import { IoIosMenu } from "react-icons/io";
 import { MdHistory } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 import { IoTrashBin } from "react-icons/io5";
